@@ -103,7 +103,7 @@ public:
    */
   std::string
   toUri() const;
-
+   
 public: // matching
   /** @brief Check if Interest, including selectors, matches the given @p name
    *  @param name The name to be matched. If this is a Data name, it shall contain the
@@ -111,7 +111,12 @@ public: // matching
    */
   bool
   matchesName(const Name& name) const;
-
+  
+  size_t size() const 
+  {
+     //return 0;
+      return m_wire.value_size();
+  }
   /**
    * @brief Check if Interest can be satisfied by @p data.
    *
